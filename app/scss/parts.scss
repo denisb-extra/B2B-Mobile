@@ -1,0 +1,416 @@
+.parts {
+	display: flex;
+	margin: 0 -45px;
+	.part {
+		width: 50%;
+		padding: 0 45px;
+		position: relative;
+		&:nth-child(1) {
+		}
+		&:nth-child(2) {
+		}
+	}
+
+	@media only screen and (max-width : $mw) {
+		flex-wrap: wrap;
+		.part {
+			width: 100%;
+			&:nth-child(2) {
+				margin-top: 25px;
+			}
+		}
+	}
+}
+
+
+.section-title {
+	text-align: center;
+	border-bottom: 3px solid #F15E00;
+	color: #666666;
+	text-transform: uppercase;
+	.main {
+		margin: auto;
+		display: inline-block;
+		background: #fff;
+		padding: 0 15px;
+		position: relative;
+		bottom: -13px;
+
+		@include f-db;
+		font-size: 22px;
+		line-height: 1;
+		
+	}
+	.desc {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		top: -6px;
+
+		@include f-r;
+		font-size: 15px;
+		
+	}
+
+	&.dark {
+		border-bottom: 3px solid #446DA4;
+		.main {
+			background: #EDF0F5;
+		}	
+	}
+
+	@media only screen and (max-width : $tw) {
+		font-size: 30px;
+	}
+	@media only screen and (max-width : $mw) {
+		font-size: 28px;
+	}
+}
+
+.section-subtitle {
+	@include f-r;
+	font-size: 17px;
+	line-height: 1.5;
+	color: #454545;
+	max-width: 1200px;
+	margin: auto;
+	text-align: center;
+}
+
+.read-more {
+	color: #fff;
+	@include f-db;
+	font-size: 16px;
+	text-transform: uppercase;
+	padding: 10px 25px;
+	border: 2px solid #fff;
+	cursor: pointer;
+	transition: 0.5s;
+	display: inline-block;
+	&.blue-border {
+		border: 2px solid #446DA4;
+	}
+	&.dark {
+		color: #646464;
+		&:hover {
+			background: #446DA4;
+			color: #fff;
+			border: 2px solid #446DA4;
+		}
+	}
+	&:hover {
+		background: #fff;
+		color: $c2;
+		border: 2px solid #fff;
+	}
+}
+
+
+.play-button {
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	height: 55px;
+	width: 55px;
+	background: #FFFFFF;
+	border-radius: 100%;
+	border: 2px solid #FFFFFF;
+	background-clip: content-box;
+	padding: 3px;
+	z-index: 3;
+	cursor: pointer;
+	transition: 0.5s;
+	i {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		color: #000;
+		font-size: 18px;
+		transition: 0.5s;
+	}
+	&:hover {
+		i {
+			color: $c2;
+		}
+	}
+}
+
+
+
+#sm_menu_ham {
+	float: right;
+	left: auto;
+	top: 10px;
+	right: 10px;
+	span {
+		background-color: #00324B;
+		height: 3px;
+	}
+}
+
+.sm_menu_outer {
+	background: #1e2633;
+	.mobile_menu {
+		li {
+			border-top: 1px solid #d6dbde;
+			border-bottom: 1px solid #d6dbde;
+
+			border-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, #d6dbde 20%, #d6dbde 50%, #d6dbde 80%, rgba(0, 0, 0, 0) 100%) 0 0 1 0;
+			a {
+				@include f-r;
+				padding: 15px 15px;
+				color: #fff;
+			}
+		}
+		.sub-menu {
+    		background-color: #1e2633 !important;
+    	}
+		.current_page_item {
+			>a {
+				@include f-b;
+				color: #fff;
+			}
+		}
+	}
+}
+
+.sm_menu_outer.slide .mobile_menu li.hasChild > a {
+    background: url(../plugins/mmenu/images/prev.png) no-repeat scroll right 10px center /  20px auto;
+}
+
+.sm_menu_outer .mobile_menu li.back a {
+    padding: 20px  20px  20px 45px;
+    background: url(../plugins/mmenu/images/back-left.png) no-repeat scroll left 15px center / 20px auto;
+}
+
+.sm_menu_outer {
+    bottom: 0;
+    height: auto;
+    top: 45px;
+}
+
+
+
+.box-product {
+	.inner {
+		height: 100%;
+		position: relative;
+		background: #fff;
+		border: 1px solid #CAD1DB;
+		padding-bottom: 45px;
+	}
+
+
+	.image {
+		height: 250px;
+		padding: 25px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		img {
+			max-width: 90%;
+			max-height: 90%;
+		}
+	}
+
+	.main {
+		padding: 25px;
+		padding-top: 0;
+		.title {
+			@include f-r;
+			font-size: 15px;
+			color: #414141;
+			text-align: center;
+			line-height: 1.3;
+		}
+	}
+	.price {
+		@include f-b;
+		font-size: 17px;
+		color: #446DA4;
+		margin-top: 10px;
+		text-align: center;
+		ins {
+			text-decoration: none;
+		}
+		del {
+			font-size: 15px;
+			margin-left: 5px;
+			@include f-r;
+		}
+	}
+
+	.bottom {
+		display: flex;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		.quantity, a {
+			width: 50%;
+		}
+		.quantity {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background: #EDF0F5;
+			padding: 10px;
+			input {
+				display: block;
+				max-width: 50px;
+				text-align: center;
+				@include f-m;
+				font-size: 16px;
+				color: #555555;
+				background: none;
+			}
+			.btn {
+				height: 25px;
+				width: 25px;
+				cursor: pointer;
+				border: 1px solid #CAD1DB;
+				text-align: center;
+				flex-shrink: 0;
+
+				@include f-b;
+				font-size: 25px;
+				color: #446DA4;
+				line-height: 20px;
+			}
+		}
+
+		a {
+			display: block;
+			background: #446DA4;
+			text-align: center;
+			@include f-m;
+			font-size: 16px;
+			color: #fff;
+			padding: 13px;
+			transition: 0.5s;
+			&:hover {
+				background: $c2;
+			}
+		}
+	}
+}
+
+
+
+
+.box-product-wide {
+	.inner {
+		height: 100%;
+		position: relative;
+		background: #fff;
+		display: flex;
+	}
+
+	.info {
+		position: relative;
+		flex-grow: 1;
+		text-align: left;
+		padding-bottom: 45px;
+	}
+
+
+	.image {
+		width: 130px;
+		padding: 10px;
+		background: #EDF0F5;
+		margin-right: 20px;
+		flex-shrink: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		img {
+			max-width: 90%;
+			max-height: 90%;
+		}
+	}
+
+	.main {
+		.title {
+			@include f-r;
+			font-size: 15px;
+			color: #555555;
+			text-align: left;
+			line-height: 1.3;
+		}
+	}
+	.price {
+		@include f-b;
+		font-size: 17px;
+		color: #F15E00;
+		margin-top: 10px;
+		text-align: left;
+		ins {
+			text-decoration: none;
+		}
+		del {
+			font-size: 15px;
+			margin-left: 5px;
+			color: #555555;
+			@include f-r;
+		}
+	}
+
+	.bottom {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		display: flex;
+		.quantity, a {
+			width: 50%;
+		}
+		.quantity {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background: #EDF0F5;
+			padding: 10px;
+			input {
+				display: block;
+				max-width: 40px;
+				text-align: center;
+				@include f-m;
+				font-size: 16px;
+				color: #555555;
+				background: none;
+			}
+			.btn {
+				height: 25px;
+				width: 25px;
+				cursor: pointer;
+				border: 1px solid #CAD1DB;
+				text-align: center;
+				flex-shrink: 0;
+
+				@include f-b;
+				font-size: 25px;
+				color: #446DA4;
+				line-height: 20px;
+			}
+		}
+
+		a {
+			display: block;
+			background: #446DA4;
+			text-align: center;
+			@include f-m;
+			font-size: 16px;
+			color: #fff;
+			padding: 13px;
+			transition: 0.5s;
+			white-space: nowrap;
+			&:hover {
+				background: $c2;
+			}
+		}
+	}
+}

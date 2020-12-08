@@ -1,0 +1,167 @@
+$mw: 950px;
+$tw: 1200px;
+$lw: 1370px;
+
+
+$c2: #F15E00;
+@mixin border {
+	$red: random(256)-1;
+	$green: random(256)-1;
+	$blue: random(256)-1;
+ 	border: 1px solid red;
+ 	border-color: rgb($red, $green, $blue);
+}
+
+@mixin placeholder-color($color) {
+	&::-webkit-input-placeholder { /* WebKit browsers */
+	  color: $color;
+	}
+	&:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	  color: $color;
+	}
+	&::-moz-placeholder { /* Mozilla Firefox 19+ */
+	  color: $color;
+	}
+	&:-ms-input-placeholder { /* Internet Explorer 10+ */
+	  color: $color;
+	}
+}
+
+@mixin flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Fonts */
+@font-face { 
+  	font-family: 'visby-light'; 
+  	src: url('../fonts/VisbyCF-Light.otf') format('truetype'); 
+} 
+@mixin f-l {
+	font-family: 'visby-light';
+	font-weight: 300;
+}
+
+@font-face { 
+  	font-family: 'visby-regular'; 
+  	src: url('../fonts/VisbyCF-Regular.otf') format('truetype'); 
+} 
+@mixin f-r {
+	font-family: 'visby-regular';
+	font-weight: 400;
+}
+
+@font-face { 
+  	font-family: 'visby-medium'; 
+  	src: url('../fonts/VisbyCF-Medium.otf') format('truetype'); 
+} 
+@mixin f-m {
+	font-family: 'visby-medium';
+	font-weight: 500;
+}
+
+@font-face { 
+  	font-family: 'visby-demi-bold'; 
+  	src: url('../fonts/VisbyCF-DemiBold.otf') format('truetype'); 
+} 
+@mixin f-db {
+	font-family: 'visby-demi-bold';
+	font-weight: 600;
+}
+
+@font-face { 
+  	font-family: 'visby-bold'; 
+  	src: url('../fonts/VisbyCF-Bold.otf') format('truetype'); 
+} 
+@mixin f-b {
+	font-family: 'visby-bold';
+	font-weight: 700;
+}
+
+@font-face { 
+  	font-family: 'visby-extra-bold'; 
+  	src: url('../fonts/VisbyCF-ExtraBold.otf') format('truetype'); 
+} 
+@mixin f-xb {
+	font-family: 'visby-extra-bold';
+	font-weight: 800;
+}
+@font-face { 
+  	font-family: 'visby-heavy'; 
+  	src: url('../fonts/VisbyCF-Heavy.otf') format('truetype'); 
+} 
+@mixin f-h {
+	font-family: 'visby-heavy';
+	font-weight: 900;
+}
+/* /Fonts */
+
+
+
+
+/* Global */
+html {
+	margin: 0 !important;
+}
+body {
+	position: relative;
+	margin: 0;
+  	padding: 0;
+  	overflow-x: hidden;
+  	@include f-r;
+  	font-size: 18px;
+  	line-height: 1;
+}
+input {
+	border: none;
+	appearance: none;
+	outline: none;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+*, *::before, *::after {
+	box-sizing: border-box;
+	direction: ltr;
+}
+
+p,h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+}
+ul {
+	-webkit-padding-start: 0;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+section {
+	width: 100%;
+	max-width: 1920px;
+	margin: auto;	
+	overflow: hidden;
+	position: relative;
+	padding: 75px 0;
+	@media only screen and (max-width : $tw) {
+		padding: 55px 0;
+	}
+	@media only screen and (max-width : $mw) {
+		padding: 35px 0;
+	}
+}
+
+.section-inner {
+	max-width: 1320px;
+	padding: 0 10px;
+	width: 100%;
+	margin: auto;
+	position: relative;
+}
+
+
+@import 'parts';
+@import 'index';
+@import 'inner';
