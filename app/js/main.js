@@ -16,6 +16,36 @@ $(document).ready(function ($) {
         "menuStyle": "slide",
     });
 
+
+    $(".icon.search").on("click", function(){
+        $(".search-field").slideToggle();
+    });
+
+    $(".has-mega-menu").on('mouseover', function(){
+        $(".mega-menu").addClass("open");
+    });
+
+
+    $(document).mousemove(function(event) { 
+        $target = $(event.target);
+        if(!$target.closest('header').length && !$target.closest('.mega-menu').length) {
+            $(".mega-menu").removeClass("open");  
+        }
+    });
+
+
+    $(".accordion .tab-title").on("click", function(){
+        var tab = $(this).closest(".tab");
+        tab.find(".content").slideToggle();
+    });
+
+    $(document).click(function(event) { 
+        $target = $(event.target);
+        if(!$target.closest('.search').length && $(window).width() < 1370) {
+            $(".search-field").slideUp();   
+        }
+    });
+
     document.addEventListener( 'wpcf7mailsent', function( event ) {
         var inputs = event.detail.inputs;
         thankyouPage = getFieldValueByName(inputs, "thankyou-page");

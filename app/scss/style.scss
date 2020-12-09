@@ -112,8 +112,12 @@ body {
   	@include f-r;
   	font-size: 18px;
   	line-height: 1;
+
+  	@media only screen and (max-width : $mw) {
+  		padding-top: 47px;
+  	}
 }
-input {
+input, select, textarea {
 	border: none;
 	appearance: none;
 	outline: none;

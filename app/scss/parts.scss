@@ -59,11 +59,10 @@
 		}	
 	}
 
-	@media only screen and (max-width : $tw) {
-		font-size: 30px;
-	}
 	@media only screen and (max-width : $mw) {
-		font-size: 28px;
+		.main {
+			font-size: 20px;
+		}
 	}
 }
 
@@ -102,6 +101,20 @@
 		background: #fff;
 		color: $c2;
 		border: 2px solid #fff;
+	}
+
+	&.orange {
+		background: $c2;
+		border: 2px solid $c2;
+		&:hover {
+			background: #fff;
+			color: $c2;
+			border: 2px solid $c2;
+		}
+	}
+
+	@media only screen and (max-width : $mw) {
+		padding: 10px 15px;
 	}
 }
 
@@ -143,7 +156,7 @@
 #sm_menu_ham {
 	float: right;
 	left: auto;
-	top: 10px;
+	top: 12px;
 	right: 10px;
 	span {
 		background-color: #00324B;
@@ -152,7 +165,7 @@
 }
 
 .sm_menu_outer {
-	background: #1e2633;
+	background: #446DA4;
 	.mobile_menu {
 		li {
 			border-top: 1px solid #d6dbde;
@@ -166,7 +179,7 @@
 			}
 		}
 		.sub-menu {
-    		background-color: #1e2633 !important;
+    		background-color: #446DA4 !important;
     	}
 		.current_page_item {
 			>a {
@@ -296,6 +309,41 @@
 			}
 		}
 	}
+
+	@media only screen and (max-width : $tw) {
+		.image {
+			height: 200px;
+			padding: 15px;
+		}
+	}
+
+	@media only screen and (max-width : $mw) {
+		.inner {
+			padding-bottom: 77px;
+		}
+		.image {
+			height: 150px;
+			padding: 10px;
+		}
+		.main {
+			padding: 10px;
+			.title {
+    			font-size: 13px;
+			}
+		}
+		.bottom {
+			flex-wrap: wrap;
+			.quantity, a {
+				width: 100%;
+			}
+			.quantity {
+				padding: 8px;
+			}
+			a {
+				padding: 10px;
+			}
+		}
+	}
 }
 
 
@@ -411,6 +459,77 @@
 			&:hover {
 				background: $c2;
 			}
+		}
+	}
+
+	@media only screen and (max-width : $lw) {
+		.bottom {
+			a {
+				font-size: 14px;
+				padding: 10px;
+				line-height: 1.8;
+			}
+		}
+	}
+
+	@media only screen and (max-width : $mw) {
+		.inner {
+			flex-wrap: wrap;
+		}
+		.info {
+			padding-bottom: 85px;
+			margin-top: 10px;
+		}
+		.image {
+			width: 100%;
+			height: 120px;
+			margin-right: 0;
+		}
+		.bottom {
+			flex-wrap: wrap;
+			.quantity, a {
+				width: 100%;
+			}
+			.quantity {
+				padding: 8px;
+			}
+			a {
+				padding: 10px;
+				line-height: 1;
+			}
+		}
+	}
+
+}
+
+
+
+.accordion {
+	.tab {
+		
+		border-top: 1px solid #CAD1DB;
+		&:last-child {
+			border-bottom: 1px solid #CAD1DB;
+		}
+
+		.tab-title {
+			@include f-b;
+			font-size: 16px;
+			color: #484848;
+			padding: 20px;
+			background: url("../images/icons/rd.png") no-repeat right 10px center;
+			cursor: pointer;
+		}
+
+		.content {
+			@include f-r;
+			font-size: 16px;
+			line-height: 1.2;
+			color: #484848;
+			display: none;
+			margin: 0;
+			padding: 20px;
+			padding-top: 0;
 		}
 	}
 }

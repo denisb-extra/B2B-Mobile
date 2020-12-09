@@ -1,0 +1,611 @@
+/* ---------------------- Section top-inner ---------------------- */
+section.top-inner {
+	padding: 20px 0;
+	padding-bottom: 0;
+	border-top: 3px solid #EDF0F5;
+	.line {
+		@include f-r;
+		font-size: 12px;
+		color: #373737;
+		a {
+			margin: 0 5px;
+		}
+		.breadcrumb_last {
+			@include f-m;
+			margin: 0 5px;
+		}
+	}
+}
+/* --------------------- /Section top-inner ---------------------- */
+
+/* ---------------------- Section about ---------------------- */
+section.about {
+	.parts {
+		display: flex;
+		margin: 0 -50px;
+		.part {
+			
+			padding: 0 50px;
+			&:nth-child(1) {
+				width: 60%;
+			}
+			&:nth-child(2) {
+				width: 40%;
+			}
+		}
+	}
+
+	.title {
+		@include f-l;
+		font-size: 36px;
+		color: #646464;
+		letter-spacing: 5px;
+		text-transform: uppercase;
+		strong {
+			@include f-xb;
+			color: #446DA4;
+		}
+	}
+
+	.content {
+		@include f-r;
+		font-size: 16px;
+		line-height: 1.5;
+		color: #484848;
+		p {
+			margin-top: 25px;
+		}
+	}
+
+	img {
+		max-width: 100%;
+	}
+
+	.read-more {
+		margin-top: 35px;
+	}
+
+	@media only screen and (max-width : $mw) {
+		.parts {
+			flex-wrap: wrap;
+			.part {
+				&:nth-child(1) {
+					width: 100%;
+				}
+				&:nth-child(2) {
+					width: 100%;
+					text-align: center;
+				}
+			}
+		}
+
+		.title {
+			font-size: 30px;
+		}
+	}	
+}
+/* --------------------- /Section about ---------------------- */
+
+/* ---------------------- Section recomendations ---------------------- */
+section.recomendations {
+	background: #EDF0F5;
+
+	.title {
+		text-align: center;
+		border-bottom: 3px solid #446DA4;
+		.inner {
+			display: inline-block;
+			margin: auto;
+			background: #EDF0F5;
+			text-transform: uppercase;
+			@include f-db;
+			font-size: 22px;
+			color: #666666;
+			p {
+				margin-top: 5px;
+			}
+
+			position: relative;
+			padding: 0 25px;
+			bottom: -30px;
+		}
+	}
+
+
+	.swiper-outer {
+		padding: 0 75px;
+		max-width: 1450px;
+		margin: auto;
+		position: relative;
+		margin-top: 55px;
+	}
+
+	.swiper-slide {
+		text-align: center;
+		.content {
+			@include f-r;
+			font-size: 16px;
+			color: #484848;
+			line-height: 1.5;
+			
+			p {
+				margin-top: 15px;
+			}
+		}
+
+		.name {
+			@include f-db;
+			font-size: 16px;
+			color: #484848;
+			margin-top: 35px;
+		}
+	}
+
+	.swiper-button {
+		width: 44px;
+		height: 44px;
+		background-color: #fff;
+		border-radius: 100%;
+		outline: none;
+		transition: 0.25s;
+		&:hover {
+			background-color: $c2;
+			&:after {
+				color: #fff;
+			}
+		}
+		&:after {
+			font-size: 18px;
+			color: #000;
+			transition: 0.25s;
+		}
+		
+	}
+
+	@media only screen and (max-width : $mw) {
+		.swiper-outer {
+			padding: 0 10px;
+		}
+		.swiper-button {
+			width: 35px;
+			height: 35px;
+			opacity: 0.5;
+			&.swiper-button-prev {
+				left: -10px;
+			}
+			&.swiper-button-next {
+				right: -10px;
+			}
+		}
+	}
+}
+/* --------------------- /Section recomendations ---------------------- */
+
+
+/* ---------------------- Section brands ---------------------- */
+section.brands {
+	.boxes {
+		display: flex;
+		flex-wrap: wrap;
+		font-size: 0;
+		margin: -35px;
+		.box {
+			width: 33.333%;
+			margin: 0;
+			padding: 35px;
+			display: block;
+			position: relative;
+			overflow: hidden;
+
+			.inner {
+				overflow: hidden;
+				position: relative;
+				border: 1px solid #DDDDDD;
+				padding: 30px;
+				transition: 0.5s;
+				&:hover {
+					border: 1px solid transparent;
+					box-shadow: 0px 0px 49px rgba(22, 29, 41, 0.0936134);
+				}
+			}
+			.image {
+				height: 100px;
+				@include flex-center;
+				img {
+					max-height: 100%;
+					max-width: 100%;
+				}
+			}
+
+			.dropdown {
+				margin-top: 50px;
+
+				select {
+					@include f-r;
+					font-size: 16px;
+					color: #555555;
+					border: 1px solid #DDDDDD;
+					background: url("../images/icons/rd.png") no-repeat right 15px center;
+					background-color: #fff;
+					padding: 10px 20px;
+					width: 100%;
+					border-radius: 100px;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+
+	@media only screen and (max-width : $tw) {
+		.boxes {
+			margin: -25px;
+			.box {
+				padding: 25px;
+				width: 50%;
+				.inner {
+					padding: 20px;
+				}
+			}
+		}
+	}
+
+	@media only screen and (max-width : $mw) {
+		.boxes {
+			margin: -5px;
+			.box {
+				padding: 5px;
+				.inner {
+					padding: 10px;
+				}
+				.image {
+					height: 50px;
+				}
+				.dropdown {
+					margin-top: 25px;
+					select {
+						padding: 5px 10px;
+						background: url("../images/icons/rd.png") no-repeat right 8px center;
+					}
+				}
+			}
+		}
+	}
+}
+/* --------------------- /Section brands ---------------------- */
+
+
+/* ---------------------- Section products ---------------------- */
+section.products {
+	&.dark {
+		background: #EDF0F5;
+	}
+	.filters {
+		display: flex;
+		align-items: center;
+		margin-bottom: 35px;
+		.filter {
+			select {
+				@include f-r;
+				font-size: 16px;
+				color: #555555;
+				border: 1px solid #DDDDDD;
+				background: url("../images/icons/rd.png") no-repeat right 15px center;
+				background-color: #fff;
+				padding: 15px 25px;
+				width: 100%;
+				padding-right: 40px;
+				cursor: pointer;
+			}
+		}
+
+		.button-clear {
+			cursor: pointer;
+			@include f-m;
+			font-size: 15px;
+			color: #373737;
+			margin-left: 35px;
+		}
+
+
+		.items-count {
+			@include f-m;
+			font-size: 15px;
+			color: #373737;
+			flex-grow: 1;
+			text-align: right;
+			margin-left: 25px;
+		}
+	}
+	.boxes {
+		display: flex;
+		flex-wrap: wrap;
+		font-size: 0;
+		margin: -10px;
+		.box {
+			width: 25%;
+			padding: 10px;
+		}
+	}
+
+	@media only screen and (max-width : $mw) {
+		.filters {
+			flex-wrap: wrap;
+			.filter {
+				width: 100%;
+			}
+
+			.button-clear {
+				margin-left: 10px;
+				margin-top: 25px;
+			}
+
+			.items-count {
+				margin-top: 25px;
+			}
+		}
+		.boxes {
+			margin: -5px;
+			.box {
+				width: 50%;
+				padding: 5px;
+			}
+		}
+	}
+}
+/* --------------------- /Section products ---------------------- */
+
+
+
+
+
+/* ---------------------- Section product ---------------------- */
+section.product {
+	.parts {
+		display: flex;
+		margin: 0 -40px;
+		.part {
+			
+			padding: 0 40px;
+			&:nth-child(1) {
+				width: 45%;
+				.part-top {
+					display: none;
+				}
+			}
+			&:nth-child(2) {
+				width: 55%;
+			}
+			
+		}
+	}
+	.part-top {
+		position: relative;
+	}
+
+	
+	.product-title {
+		@include f-b;
+		font-size: 28px;
+		color: #446DA4;
+		line-height: 1.2;
+	}
+	.sku {
+		@include f-r;
+		font-size: 14px;
+		color: #8A8A8A;
+		margin-top: 15px;
+	}
+
+	.content {
+		@include f-r;
+		font-size: 16px;
+		color: #484848;
+		line-height: 1;
+		margin-top: 25px;
+		strong {
+			@include f-b;
+		}
+		p,li,ul {
+			margin-top: 15px;
+		}
+		ul {
+			list-style: disc;
+			padding-right: 30px;
+		}
+	}
+
+	.line {
+		margin-top: 25px;
+		display: flex;
+		align-items: center;
+		&.first {
+			border-bottom: 1px solid #CAD1DB;
+			padding-bottom: 10px;
+			margin-top: 55px;
+		}
+	}
+	.price {
+		@include f-b;
+		font-size: 36px;
+		color: #F15E00;
+		text-decoration: none;
+		flex-grow: 1;
+		ins {
+			text-decoration: none;
+		}
+		del {
+			@include f-r;
+			margin-right: 5px;
+			font-size: 20px;
+		}
+	}
+
+	.instock {
+		@include f-b;
+		font-size: 16px;
+		color: #484848;
+		span {
+			margin-left: 3px;
+		}
+		span, img {
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+
+	.sep {
+		height: 30px;
+		margin: 0 30px;
+		width: 1px;
+		background: #CAD1DB;
+	}
+	.fav {
+		@include f-b;
+		font-size: 16px;
+		color: #484848;
+		cursor: pointer;
+		.wpulike-default {
+			display: inline-block;
+			padding: 0;
+
+			.count-box {
+				display: none;
+			}
+			.wp_ulike_btn {
+				height: 15px;
+				width: 15px;
+				background-color: transparent;
+				padding: 0;	
+				margin-right: 10px;
+			}
+		}
+	}
+
+	.share {
+		@include f-b;
+		color: #484848;
+		flex-grow: 1;
+		.title {
+			cursor: pointer;
+			font-size: 16px;
+		}
+		i {
+			margin-right: 5px;
+			font-size: 20px;
+		}
+		
+		.icons-wrapper {
+			display: none;
+			position: absolute;
+			top: 41px;
+			left: 0;
+			width: auto;
+		}
+		.icons {
+			display: flex;
+		}
+	}
+
+
+	.add-to-cart {
+		margin: 0 20px;
+	}
+
+	.accordion {
+		margin-top: 85px;
+	}
+
+	.sliders {
+		.swiper-container {
+			margin-right: 0;
+		}
+		.gallery-top {
+			border: 1px solid #CAD1DB;
+			.swiper-slide {
+				padding: 20px;
+				height: auto;
+				@include flex-center;
+				img {
+					max-width: 90%;
+				}
+			}
+		}
+		.gallery-thumbs {
+			margin-top: 10px;
+			.swiper-slide {
+				cursor: pointer;
+				transition: opacity 0.5s;
+				background: #fff;
+				height: 100px;
+				border: 1px solid #CAD1DB;
+				@include flex-center;
+				img {
+					max-height: 80%;
+					max-width: 90%;
+				}
+				
+				&.swiper-slide-thumb-active {
+					opacity: 0.5;
+				}
+			}
+		}
+	}
+
+	@media only screen and (max-width : $mw) {
+		.parts {
+			flex-wrap: wrap;	
+			flex-direction: column;
+			.part {
+				
+				&:nth-child(2) {
+					width: 100%;
+					margin-top: 25px;
+					.part-top {
+						display: none;
+					}
+				}
+				&:nth-child(1) {
+					width: 100%;
+					.part-top {
+						display: block;
+					}
+				}
+			}
+		}
+
+		.product-title {
+			font-size: 20px;
+		}
+
+		.sliders {
+			margin-top: 25px;
+			.gallery-top {
+				.swiper-slide {
+					padding: 10px;
+				}
+			}
+		}
+
+		.line {
+			flex-wrap: wrap;
+			&.first {
+				margin-top: 35px;
+			}
+		}
+
+		.price {
+			font-size: 30px;
+			width: 100%;
+			margin-bottom: 25px;
+		}
+
+		.share {
+			width: 100%;
+			margin-bottom: 25px;
+		}
+
+
+	}
+}
+
+/* --------------------- /Section product ---------------------- */
